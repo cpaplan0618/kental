@@ -1,11 +1,216 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>보스턴 바우 치과</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="국산 정품 임플란트 개수 제한 없이 29만원! 맞춤형 지대주, 지르코니아 크라운 포함, 철저한 사후관리, 수면 치료. 신사역 도보 1분 위치.">
+  <title>국산 정품 임플란트 29만원 | 신사역 도보 1분</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>보스턴 바우 치과 홈페이지</h1>
-    <p>웹사이트 오픈 준비 중입니다.</p>
+
+  <!-- Floating Real-time Rolling Toast Notification (3초마다 롤링) -->
+  <div class="rolling-toast-popup" id="rollingToast">
+    <div class="rolling-toast-icon">🔥</div>
+    <div class="rolling-toast-info">
+      <span class="rolling-toast-tag">방금 상담 신청 완료</span>
+      <span class="rolling-toast-msg" id="rollingToastText">김*철(61세)님이 29만원 임플란트 상담을 신청하셨습니다.</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="padding-top: 50px;">
+    <div class="container">
+      <div class="hero-header">
+        <span class="hero-sub-badge">📍 신사역 도보 1분 | 개수 제한 無</span>
+        <h1 class="hero-title">
+          <strong class="highlight-bold">국산 정품 임플란트</strong><br>
+          개수 제한 없이 <span class="price-highlight">29만원</span>
+        </h1>
+        <p class="hero-desc">
+          치통으로 더 이상 고통받지 마세요! 과잉 진료 없이 <strong>맞춤 지대주와 지르코니아 크라운까지 모두 포함</strong>된 파격 혜택
+        </p>
+      </div>
+
+      <!-- Hero Comparison Grid: Clean Images Without Text Overlay -->
+      <div class="comparison-wrapper">
+        <div class="comparison-grid">
+
+          <!-- Left: Before Pain -->
+          <div class="comparison-card card-before">
+            <span class="comparison-tag tag-before">BEFORE | 시술 전</span>
+            <img src="assets/toothache.jpg" alt="치통으로 괴로워하는 60대 남성">
+          </div>
+
+          <div class="vs-badge">VS</div>
+
+          <!-- Right: After Smile -->
+          <div class="comparison-card card-after">
+            <span class="comparison-tag tag-after">AFTER | 시술 후</span>
+            <img src="assets/smiling.jpg" alt="임플란트 수술 후 자신있게 웃는 60대 남성">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body Section: Core Pillars -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">SPECIAL BENEFITS</p>
+        <h2 class="section-title">임플란트 전문 치과만의 장점</h2>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- Core 1 -->
+        <div class="feature-card">
+          <div class="feature-number">01</div>
+          <div class="feature-icon prominent-icon">🛡️</div>
+          <h3 class="feature-title">맞춤형 지대주,<br>지르코니아 크라운 포함</h3>
+          <p class="feature-desc">
+            개인 잇몸 맞춤 지대주와 고강도 지르코니아 크라운이 추가 비용 없이 포함됩니다.
+          </p>
+          <div class="feature-tag-list">
+            <span class="feature-tag">1:1 맞춤 제작</span>
+            <span class="feature-tag">고강도 지르코니아</span>
+            <span class="feature-tag">추가금 0원</span>
+          </div>
+        </div>
+
+        <!-- Core 2 -->
+        <div class="feature-card">
+          <div class="feature-number">02</div>
+          <div class="feature-icon prominent-icon">🏥</div>
+          <h3 class="feature-title">철저한 사후관리</h3>
+          <p class="feature-desc">
+            정품 보증서 발급과 정기 정밀검진을 포함한 1:1 평생 케어 시스템을 제공합니다.
+          </p>
+          <div class="feature-tag-list">
+            <span class="feature-tag">정품 보증서</span>
+            <span class="feature-tag">정기 검진</span>
+            <span class="feature-tag">1:1 전담 케어</span>
+          </div>
+        </div>
+
+        <!-- Core 3 -->
+        <div class="feature-card">
+          <div class="feature-number">03</div>
+          <div class="feature-icon prominent-icon">💤</div>
+          <h3 class="feature-title">수면 치료</h3>
+          <p class="feature-desc">
+            치과 공포증 없이 편안하고 안전한 의식하 진정 수면 시술로 진행됩니다.
+          </p>
+          <div class="feature-tag-list">
+            <span class="feature-tag">의식하 진정</span>
+            <span class="feature-tag">통증 완화</span>
+            <span class="feature-tag">안심 수면시술</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer DB Lead Form Section -->
+  <section class="form-section" id="dbFormSection">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <h2 class="form-title">🎁 29만원 임플란트 상담 신청</h2>
+          <p class="form-subtitle">성함과 연락처를 남겨주시면 전담 상담원이 친절히 안내해 드립니다. (신사역 도보 1분)</p>
+        </div>
+
+        <form id="implantDbForm">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="userName" class="form-label">이름 <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="userName" class="form-input" placeholder="성함을 입력하세요 (예: 홍길동)" required>
+          </div>
+
+          <!-- Age -->
+          <div class="form-group">
+            <label for="userAge" class="form-label">나이 <span style="color: #ef4444;">*</span></label>
+            <input type="number" id="userAge" class="form-input" placeholder="나이를 입력하세요 (예: 62)" min="18" max="120" required>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="userPhone" class="form-label">전화번호 <span style="color: #ef4444;">*</span></label>
+            <input type="tel" id="userPhone" class="form-input" placeholder="전화번호를 입력하세요 ('-' 없이 입력)" required>
+          </div>
+
+          <!-- Personal Data Agreement Checkbox -->
+          <div class="agreement-box">
+            <label class="checkbox-label">
+              <input type="checkbox" id="agreeTerms" required checked>
+              <span>[필수] 개인정보 수집 및 이용 동의</span>
+            </label>
+            <button type="button" class="btn-terms-view" id="btnTermsView">약관보기</button>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit-form">
+            🚀 29만원 혜택 상담 신청하기
+          </button>
+        </form>
+
+        <!-- Live Ticker -->
+        <div class="ticker-box">
+          <div class="ticker-dot"></div>
+          <div id="tickerText">방금 김*철님(61세, 010-****-4821) 29만원 혜택 상담 신청이 완료되었습니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fixed Bottom CTA Bar -->
+  <div class="fixed-bottom-cta">
+    <div class="fixed-cta-text">
+      <strong>국산 정품 임플란트 29만원</strong> (신사역 도보 1분)
+    </div>
+    <button class="btn-fixed-apply" onclick="scrollToForm()">상담 신청</button>
+  </div>
+
+  <!-- Privacy Policy Terms Modal -->
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal-card">
+      <button class="btn-close-modal" id="btnCloseTerms">&times;</button>
+      <h3 class="modal-title">개인정보 수집 및 이용 동의 안내</h3>
+      <div class="modal-body">
+        <p><strong>1. 수집하는 개인정보 항목</strong></p>
+        <p>- 필수항목: 이름, 나이, 전화번호</p>
+        <br>
+        <p><strong>2. 개인정보의 수집 및 이용목적</strong></p>
+        <p>- 임플란트 혜택 이벤트 상담 신청 및 예약 안내, 전화 및 문자(SMS)를 통한 맞춤형 진료 정보 제공</p>
+        <br>
+        <p><strong>3. 개인정보의 보유 및 이용기간</strong></p>
+        <p>- 수집일로부터 1년 또는 이용자의 동의 철회 요청 시까지 즉시 파기합니다.</p>
+        <br>
+        <p><strong>4. 동의 거부 권리 안내</strong></p>
+        <p>- 이용자는 개인정보 수집 및 이용 동의를 거부할 권리가 있으나, 거부 시 혜택 상담 신청 및 안내 서비스 이용이 제한될 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card" style="text-align: center;">
+      <button class="btn-close-modal" id="btnCloseSuccess">&times;</button>
+      <div class="success-icon">✓</div>
+      <h3 class="modal-title"><span id="applicantNameDisplay">고객</span>님, 상담 신청이 완료되었습니다!</h3>
+      <p style="font-size: 1rem; color: var(--slate-700); line-height: 1.6; margin-top: 10px;">
+        신사역 도보 1분 정품 임플란트 <strong>29만원 혜택 대상자</strong>로 정상 접수되었습니다.<br>
+        전담 상담원이 확인 후 빠른 시간 내 연락드리겠습니다.
+      </p>
+      <button class="nav-cta-btn" style="margin-top: 24px; width: 100%; font-size: 1.1rem; padding: 14px;" onclick="document.getElementById('successModal').classList.remove('active')">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
