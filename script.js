@@ -1,26 +1,17 @@
-/**
- * Dental Implant DB Landing Page - Interactive Logic
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
   const dbForm = document.getElementById('implantDbForm');
   const nameInput = document.getElementById('userName');
   const ageInput = document.getElementById('userAge');
   const phoneInput = document.getElementById('userPhone');
   const agreeTermsCheckbox = document.getElementById('agreeTerms');
   
-  // Modals & Popups
   const termsModal = document.getElementById('termsModal');
-  const successModal = document.getElementById('successModal');
   const btnTermsView = document.getElementById('btnTermsView');
   const btnCloseTerms = document.getElementById('btnCloseTerms');
-  const btnCloseSuccess = document.getElementById('btnCloseSuccess');
   
   const rollingToast = document.getElementById('rollingToast');
   const rollingToastText = document.getElementById('rollingToastText');
 
-  // Smooth scroll to DB Form
   window.scrollToForm = function() {
     const formElement = document.getElementById('dbFormSection');
     if (formElement) {
@@ -31,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Phone number input auto formatting (010-1234-5678)
   if (phoneInput) {
     phoneInput.addEventListener('input', (e) => {
       let val = e.target.value.replace(/[^0-9]/g, '');
@@ -47,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Age input filter (only numbers, max 120)
   if (ageInput) {
     ageInput.addEventListener('input', (e) => {
       let val = e.target.value.replace(/[^0-9]/g, '');
@@ -56,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Terms Modal Toggle
   if (btnTermsView && termsModal && btnCloseTerms) {
     btnTermsView.addEventListener('click', (e) => {
       e.preventDefault();
@@ -74,20 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Success Modal Close
-  if (successModal && btnCloseSuccess) {
-    btnCloseSuccess.addEventListener('click', () => {
-      successModal.classList.remove('active');
-    });
-
-    successModal.addEventListener('click', (e) => {
-      if (e.target === successModal) {
-        successModal.classList.remove('active');
-      }
-    });
-  }
-
-  // Form Submission Logic
+  // Submit Handler -> Redirection to dedicated success.html
   if (dbForm) {
     dbForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -121,17 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Successful lead capture
-      document.getElementById('applicantNameDisplay').textContent = name;
-      successModal.classList.add('active');
+      // Store in Session Storage as fallback
+      sessionStorage.setItem('applicant_name', name);
+      sessionStorage.setItem('applicant_age', age);
+      sessionStorage.setItem('applicant_phone', phone);
 
-      // Reset form
-      dbForm.reset();
+      // Redirect to dedicated success.html page
+      const redirectUrl = `success.html?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&phone=${encodeURIComponent(phone)}`;
+      window.location.href = redirectUrl;
     });
   }
 
   // 3-Second Rolling Applicant Toast Popup Logic
-  // Format: "OO님(OO세)이 임플란트 상담 신청했습니다."
   const applicantList = [
     { name: '김*철', age: '61세' },
     { name: '이*숙', age: '58세' },
