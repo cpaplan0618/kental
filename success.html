@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="임플란트 상담 신청 완료 - 신사역 도보 1분">
+  <title>상담 신청 완료 | 29만원 정품 임플란트</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .success-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 40px 20px;
+      color: white;
+    }
+    .success-card-full {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 48px 36px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(16px);
+      text-align: center;
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .success-badge-icon {
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin: 0 auto 24px;
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    }
+    .success-headline {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 12px;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+    .success-subtext {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      word-break: keep-all;
+      line-height: 1.6;
+    }
+    .summary-box {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .summary-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #334155;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+    .summary-row:last-child {
+      margin-bottom: 0;
+    }
+    .summary-label {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .summary-val {
+      color: #ffffff;
+      font-weight: 800;
+    }
+    .summary-val.highlight-price {
+      color: #38bdf8;
+      font-size: 1.15rem;
+    }
+    .notice-info-box {
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+      color: #e0f2fe;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+    .btn-home-return {
+      display: inline-block;
+      width: 100%;
+      background: var(--primary-gradient);
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 900;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: var(--shadow-glow);
+      transition: all 0.3s ease;
+    }
+    .btn-home-return:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-page-wrapper">
+    <div class="success-card-full">
+      <div class="success-badge-icon">✓</div>
+      
+      <h1 class="success-headline">
+        <span id="displayUserName">고객</span>님,<br>
+        상담 신청이 완료되었습니다!
+      </h1>
+      
+      <p class="success-subtext">
+        신사역 도보 1분 정품 임플란트 <strong>29만원 특별 혜택 대상자</strong>로 정상 접수되었습니다.
+      </p>
+
+      <div class="summary-box">
+        <div class="summary-title">📋 신청 내역 확인</div>
+        <div class="summary-row">
+          <span class="summary-label">신청자 성함</span>
+          <span class="summary-val" id="displayFullInfo">홍길동 (60세)</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">연락처</span>
+          <span class="summary-val" id="displayPhone">010-0000-0000</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">혜택 내용</span>
+          <span class="summary-val highlight-price">개수 제한 없이 29만원</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">포함 항목</span>
+          <span class="summary-val">맞춤 지대주 + 지르코니아</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">접수 일시</span>
+          <span class="summary-val" id="displayTime">2026.07.23 11:44</span>
+        </div>
+      </div>
+
+      <div class="notice-info-box">
+        📞 <strong>전담 상담원이 확인 후 빠른 시간 내 안내 전화드립니다.</strong><br>
+        📍 <strong>위치:</strong> 서울 지하철 3호선 <strong>신사역 도보 1분</strong>
+      </div>
+
+      <a href="index.html" class="btn-home-return">
+        🏠 메인 페이지로 돌아가기
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get('name') || sessionStorage.getItem('applicant_name') || '고객';
+      const age = urlParams.get('age') || sessionStorage.getItem('applicant_age') || '';
+      const phone = urlParams.get('phone') || sessionStorage.getItem('applicant_phone') || '';
+
+      document.getElementById('displayUserName').textContent = name;
+      document.getElementById('displayFullInfo').textContent = age ? `${name} (${age}세)` : name;
+      document.getElementById('displayPhone').textContent = phone || '입력 완료';
+
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+
+      document.getElementById('displayTime').textContent = `${year}.${month}.${day} ${hours}:${minutes}`;
+    });
+  </script>
+</body>
+</html>
