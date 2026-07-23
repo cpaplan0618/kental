@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Submit Handler -> Redirection to dedicated success.html
   if (dbForm) {
     dbForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+  
 
       const name = nameInput.value.trim();
       const age = ageInput.value.trim();
