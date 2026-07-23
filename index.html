@@ -14,7 +14,7 @@
     <div class="rolling-toast-icon">🔥</div>
     <div class="rolling-toast-info">
       <span class="rolling-toast-tag">방금 상담 신청 완료</span>
-      <span class="rolling-toast-msg" id="rollingToastText">김*철(61세)님이 29만원 임플란트 상담을 신청하셨습니다.</span>
+      <span class="rolling-toast-msg" id="rollingToastText">김*철(61세)님이 임플란트 상담 신청했습니다.</span>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
         <span class="hero-sub-badge">📍 신사역 도보 1분 | 개수 제한 無</span>
         <h1 class="hero-title">
           <strong class="highlight-bold">국산 정품 임플란트</strong><br>
-          개수 제한 없이 <span class="price-highlight">29만원</span>
+          개수 제한 없이 <span class="price-highlight-massive">29만원</span>
         </h1>
         <p class="hero-desc">
           치통으로 더 이상 고통받지 마세요! 과잉 진료 없이 <strong>맞춤 지대주와 지르코니아 크라운까지 모두 포함</strong>된 파격 혜택
@@ -55,7 +55,7 @@
     </div>
   </section>
 
-  <!-- Body Section: Core Pillars -->
+  <!-- Body Section: Core Pillars (Center Aligned) -->
   <section class="features-section">
     <div class="container">
       <div class="section-header">
@@ -66,14 +66,14 @@
       <div class="features-grid">
 
         <!-- Core 1 -->
-        <div class="feature-card">
+        <div class="feature-card center-aligned">
           <div class="feature-number">01</div>
           <div class="feature-icon prominent-icon">🛡️</div>
           <h3 class="feature-title">맞춤형 지대주,<br>지르코니아 크라운 포함</h3>
           <p class="feature-desc">
             개인 잇몸 맞춤 지대주와 고강도 지르코니아 크라운이 추가 비용 없이 포함됩니다.
           </p>
-          <div class="feature-tag-list">
+          <div class="feature-tag-list center-tags">
             <span class="feature-tag">1:1 맞춤 제작</span>
             <span class="feature-tag">고강도 지르코니아</span>
             <span class="feature-tag">추가금 0원</span>
@@ -81,14 +81,14 @@
         </div>
 
         <!-- Core 2 -->
-        <div class="feature-card">
+        <div class="feature-card center-aligned">
           <div class="feature-number">02</div>
           <div class="feature-icon prominent-icon">🏥</div>
           <h3 class="feature-title">철저한 사후관리</h3>
           <p class="feature-desc">
             정품 보증서 발급과 정기 정밀검진을 포함한 1:1 평생 케어 시스템을 제공합니다.
           </p>
-          <div class="feature-tag-list">
+          <div class="feature-tag-list center-tags">
             <span class="feature-tag">정품 보증서</span>
             <span class="feature-tag">정기 검진</span>
             <span class="feature-tag">1:1 전담 케어</span>
@@ -96,14 +96,14 @@
         </div>
 
         <!-- Core 3 -->
-        <div class="feature-card">
+        <div class="feature-card center-aligned">
           <div class="feature-number">03</div>
           <div class="feature-icon prominent-icon">💤</div>
           <h3 class="feature-title">수면 치료</h3>
           <p class="feature-desc">
             치과 공포증 없이 편안하고 안전한 의식하 진정 수면 시술로 진행됩니다.
           </p>
-          <div class="feature-tag-list">
+          <div class="feature-tag-list center-tags">
             <span class="feature-tag">의식하 진정</span>
             <span class="feature-tag">통증 완화</span>
             <span class="feature-tag">안심 수면시술</span>
@@ -111,6 +111,12 @@
         </div>
 
       </div>
+
+      <!-- Pure Image Only Showcase -->
+      <div class="clean-image-container">
+        <img src="assets/clean_implant_3d_render.jpg" alt="임플란트 3D 모형 이미지">
+      </div>
+
     </div>
   </section>
 
@@ -156,23 +162,9 @@
             🚀 29만원 혜택 상담 신청하기
           </button>
         </form>
-
-        <!-- Live Ticker -->
-        <div class="ticker-box">
-          <div class="ticker-dot"></div>
-          <div id="tickerText">방금 김*철님(61세, 010-****-4821) 29만원 혜택 상담 신청이 완료되었습니다.</div>
-        </div>
       </div>
     </div>
   </section>
-
-  <!-- Fixed Bottom CTA Bar -->
-  <div class="fixed-bottom-cta">
-    <div class="fixed-cta-text">
-      <strong>국산 정품 임플란트 29만원</strong> (신사역 도보 1분)
-    </div>
-    <button class="btn-fixed-apply" onclick="scrollToForm()">상담 신청</button>
-  </div>
 
   <!-- Privacy Policy Terms Modal -->
   <div class="modal-overlay" id="termsModal">
@@ -205,7 +197,7 @@
         신사역 도보 1분 정품 임플란트 <strong>29만원 혜택 대상자</strong>로 정상 접수되었습니다.<br>
         전담 상담원이 확인 후 빠른 시간 내 연락드리겠습니다.
       </p>
-      <button class="nav-cta-btn" style="margin-top: 24px; width: 100%; font-size: 1.1rem; padding: 14px;" onclick="document.getElementById('successModal').classList.remove('active')">
+      <button class="btn-submit-form" style="margin-top: 24px; width: 100%; font-size: 1.1rem; padding: 14px;" onclick="document.getElementById('successModal').classList.remove('active')">
         확인
       </button>
     </div>
