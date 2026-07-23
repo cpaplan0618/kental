@@ -131,15 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3-Second Rolling Applicant Toast Popup Logic
+  // Format: "OO님(OO세)이 임플란트 상담 신청했습니다."
   const applicantList = [
-    { name: '김*철', age: '61세', phone: '010-****-4821' },
-    { name: '이*숙', age: '58세', phone: '010-****-9012' },
-    { name: '박*호', age: '67세', phone: '010-****-3349' },
-    { name: '최*영', age: '55세', phone: '010-****-1092' },
-    { name: '정*훈', age: '64세', phone: '010-****-7731' },
-    { name: '강*순', age: '62세', phone: '010-****-5512' },
-    { name: '윤*석', age: '70세', phone: '010-****-8203' },
-    { name: '장*희', age: '65세', phone: '010-****-6190' }
+    { name: '김*철', age: '61세' },
+    { name: '이*숙', age: '58세' },
+    { name: '박*호', age: '67세' },
+    { name: '최*영', age: '55세' },
+    { name: '정*훈', age: '64세' },
+    { name: '강*순', age: '62세' },
+    { name: '윤*석', age: '70세' },
+    { name: '장*희', age: '65세' }
   ];
 
   let appIndex = 0;
@@ -147,24 +148,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function triggerRollingToast() {
     if (!rollingToast || !rollingToastText) return;
 
-    // Fade out current toast
     rollingToast.classList.remove('active');
 
     setTimeout(() => {
       appIndex = (appIndex + 1) % applicantList.length;
       const current = applicantList[appIndex];
-      rollingToastText.textContent = `${current.name}(${current.age})님이 29만원 임플란트 상담을 신청하셨습니다.`;
-      
-      // Fade in new toast
+      rollingToastText.textContent = `${current.name}(${current.age})님이 임플란트 상담 신청했습니다.`;
       rollingToast.classList.add('active');
     }, 400);
   }
 
-  // Initial show after 1s
   setTimeout(() => {
     if (rollingToast) rollingToast.classList.add('active');
   }, 1000);
 
-  // Roll every 3 seconds (3000ms)
   setInterval(triggerRollingToast, 3000);
 });
